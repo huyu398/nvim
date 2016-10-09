@@ -55,4 +55,12 @@ if dein#tap('vim-hybrid')
     set background=dark
     colorscheme hybrid
 end
+
+if dein#tap('lightline.vim')
+    let g:lightline = {
+                \ 'colorscheme' : 'wombat',
+                \ 'separator' : { 'left' : '', 'right' : ''  },
+                \ 'subseparator': { 'left': '', 'right': ''   }
+                \ }
+endif
 " }}}

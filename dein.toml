@@ -4,4 +4,7 @@ repo = 'Shougo/dein.vim'
 # visual {{{
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
 # }}}
