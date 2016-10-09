@@ -4,7 +4,18 @@ repo = 'Shougo/dein.vim'
 # visual {{{
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
+hook_add = '''
+    set background=dark
+    autocmd VimEnter * nested colorscheme hybrid
+'''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+hook_add = '''
+    let g:lightline = {
+                \ 'colorscheme' : 'wombat',
+                \ 'separator' : { 'left' : '', 'right' : ''  },
+                \ 'subseparator': { 'left': '', 'right': ''   }
+                \ }
+'''
 # }}}
