@@ -49,3 +49,10 @@ endfunction
 
 call init#dein()
 " }}}
+
+" plugins settings {{{
+if dein#tap('vim-hybrid')
+    set background=dark
+    colorscheme hybrid
+end
+" }}}
