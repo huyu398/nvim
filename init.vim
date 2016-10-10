@@ -9,6 +9,62 @@ else
 endif
 " }}}
 
+" basic settings {{{
+" options {{{
+set mouse-=a
+
+set number
+set cursorline
+set wildmode=list:full
+
+set foldmethod=marker
+set foldlevelstart=10
+
+set list
+set listchars=tab:▸\ ,eol:¬
+
+set splitbelow
+set splitright
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
+
+set noswapfile
+if has('persistent_undo')
+    let s:undo_dir = expand(s:config_dir . '/undo')
+    if !isdirectory(s:undo_dir)
+        call mkdir(s:undo_dir)
+    endif
+    let &undodir = s:undo_dir
+    set undofile
+    unlet s:undo_dir
+endif
+
+set ignorecase
+" }}}
+
+" mappings {{{
+inoremap jj <ESC>
+
+noremap j gj
+noremap k gk
+
+noremap H gT
+noremap L gt
+
+" No need cursor key on normal, visual, and insert mode
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+" }}}
+" }}}
+
 " dein.vim settings {{{
 function! init#dein() abort
     " check git command
