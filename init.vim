@@ -98,6 +98,9 @@ function! init#dein() abort
         call dein#save_state()
     endif
 
+    if dein#check_install(['vimproc.vim'])
+        call dein#install(['vimproc.vim'])
+    endif
     if dein#check_install()
         call dein#install()
     endif
