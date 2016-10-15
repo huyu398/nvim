@@ -40,3 +40,10 @@ hook_add = '''
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 # }}}
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+hook_add = '''
+    let g:AutoPairsFlyMode = 1
+    let g:AutoPairsShortcutBackInsert = '<C-B>'
+'''
