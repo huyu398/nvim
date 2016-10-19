@@ -61,3 +61,35 @@ hook_source = '''
     let g:choosewin_statusline_replace = 0
     let g:choosewin_tabline_replace = 0
 '''
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+on_cmd = ['NERDTreeToggle']
+depends = ['nerdtree-git-plugin']
+hook_add = '''
+    nnoremap <silent> <C-T>      :NERDTreeToggle<CR>
+    vnoremap <silent> <C-T> <ESC>:NERDTreeToggle<CR>
+    onoremap <silent> <C-T>      :NERDTreeToggle<CR>
+    inoremap <silent> <C-T> <ESC>:NERDTreeToggle<CR>
+    cnoremap <silent> <C-T> <C-U>:NERDTreeToggle<CR>
+    let g:NERDTreeShowHidden = 1
+    let g:NERDTreeShowBookmarks = 1
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+'''
+
+[[plugins]]
+repo = 'huyu398/nerdtree-git-plugin'
+lazy = 1
+hook_source = '''
+    let g:NERDTreeIndicatorMapCustom = {
+        \ "Modified"  : "+",
+        \ "Staged"    : "*",
+        \ "Untracked" : "✭",
+        \ "Renamed"   : "➜",
+        \ "Unmerged"  : "═",
+        \ "Deleted"   : "x",
+        \ "Dirty"     : "✗",
+        \ "Clean"     : "✔︎",
+        \ "Unknown"   : "?"
+        \ }
+'''
