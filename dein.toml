@@ -70,3 +70,6 @@ hook_add = '''
     let g:AutoPairsFlyMode = 1
     let g:AutoPairsShortcutBackInsert = '<C-B>'
 '''
+
+[[plugins]]
+repo = 'tpope/vim-surround'
