@@ -1,3 +1,4 @@
+" vim: foldlevel=0
 " config directory setting by each OS {{{
 if has('win32') || has('win64')
     let s:config_dir = $HOME . '/AppData/Local/nvim'
@@ -30,6 +31,7 @@ set splitright
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 
 set noswapfile
 if has('persistent_undo')
@@ -53,6 +55,11 @@ noremap k gk
 
 noremap H gT
 noremap L gt
+
+if has('nvim')
+    tnoremap <ESC> <C-\><C-N>
+    nnoremap <Leader>s :terminal<CR>
+endif
 
 " No need cursor key on normal, visual, and insert mode
 noremap <Up> <Nop>
