@@ -73,3 +73,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+    set previewheight=25
+'''
