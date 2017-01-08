@@ -93,3 +93,10 @@ hook_source = '''
         \ "Unknown"   : "?"
         \ }
 '''
+
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+on_cmd = ['OverCommandLine']
+hook_add = '''
+    nnoremap <silent> <LEADER>m :OverCommandLine<ENTER>%s/
+'''
