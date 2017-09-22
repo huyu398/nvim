@@ -13,6 +13,8 @@ endif
 
 " basic settings {{{
 " options {{{
+set autochdir
+
 set mouse-=a
 
 set number
