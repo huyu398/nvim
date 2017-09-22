@@ -100,9 +100,11 @@ function! init#dein() abort
 
         let l:toml = s:config_dir . '/dein.toml'
         let l:toml_lazy = s:config_dir . '/dein_lazy.toml'
+        let l:toml_lang = s:config_dir . '/dein_lang.toml'
 
         call dein#load_toml(l:toml, {'lazy' : 0})
         call dein#load_toml(l:toml_lazy, {'lazy' : 1})
+        call dein#load_toml(l:toml_lang, {'lazy' : 1})
 
         call dein#end()
         call dein#save_state()
