@@ -23,6 +23,10 @@ hook_source = '''
 repo = 'Shougo/neosnippet-snippets'
 lazy = 1
 
+#[[plugins]]
+#repo = 'scrooloose/syntastic'
+#on_ft = ['python']
+
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 on_map = [
