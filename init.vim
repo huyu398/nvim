@@ -120,3 +120,5 @@ endfunction
 
 call init#dein()
 " }}}
+
+filetype indent plugin on
