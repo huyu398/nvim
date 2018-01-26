@@ -2,6 +2,9 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 hook_add = '''
     if dein#util#_is_windows()
