@@ -2,7 +2,7 @@
 " config directory setting by each OS {{{
 if has('win32') || has('win64')
     let s:config_dir = $HOME . '/AppData/Local/nvim'
-    let g:python3_host_prog = 'C:\Users\' . $USERNAME . '\AppData\Local\Programs\Python\Python35-32\python.exe'
+    let g:python3_host_prog = 'C:\Users\' . $USERNAME . '\AppData\Local\Continuum\Anaconda3\python.exe'
 elseif has('unix')
     let s:config_dir = $HOME . '/.config/nvim'
 else
