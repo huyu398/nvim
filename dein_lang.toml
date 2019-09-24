@@ -43,3 +43,9 @@ on_ft = ['toml']
     repo = 'mattn/emmet-vim'
     on_ft = ['html', 'css']
 # }}}
+
+# fish shell {{{
+[[plugins]]
+    repo = 'dag/vim-fish'
+    on_ft = ['fish']
+# }}}
