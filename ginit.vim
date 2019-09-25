@@ -1,3 +1,5 @@
 if has('win32') || has('win64')
-    Guifont Myrica MM:h12
+    GuiFont! HackGen Console for Powerline:h13
+    GuiPopupmenu 0
+    GuiTabline 0
 endif
