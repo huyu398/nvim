@@ -65,6 +65,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+hook_add = '''
+    let g:indentLine_setConceal = 0
+'''
 # }}}
 
 [[plugins]]
