@@ -23,6 +23,15 @@ hook_source = '''
 repo = 'Shougo/neosnippet-snippets'
 lazy = 1
 
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+on_cmd = ['Deol']
+hook_add = '''
+    nnoremap <silent> <LEADER>df :Deol -split=floating -command=fish<CR>
+    nnoremap <silent> <LEADER>dv :Deol -split=vertical -command=fish<CR>
+    nnoremap <silent> <LEADER>ds :Deol -split=horizontal -command=fish<CR>
+'''
+
 #[[plugins]]
 #repo = 'scrooloose/syntastic'
 #on_ft = ['python']
