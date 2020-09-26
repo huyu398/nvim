@@ -49,7 +49,27 @@ on_ft = ['toml']
 # html or css {{{
 [[plugins]]
     repo = 'mattn/emmet-vim'
-    on_ft = ['html', 'css', 'htmldjango']
+    on_ft = ['html', 'css', 'htmldjango', 'javascriptreact']
+# }}}
+
+# javascript {{{
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript', 'javascriptreact']
+
+[[plugins]]
+repo = 'moll/vim-node'
+on_ft = ['javascript']
+# }}}
+
+# jsx {{{
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascriptreact']
+
+[[plugins]]
+repo = 'alampros/vim-styled-jsx'
+on_ft = ['javascriptreact']
 # }}}
 
 # fish shell {{{
