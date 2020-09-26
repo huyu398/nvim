@@ -91,7 +91,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'huyu398/nerdtree-git-plugin'
+repo = 'Xuyuanp/nerdtree-git-plugin'
 lazy = 1
 hook_source = '''
     let g:NERDTreeIndicatorMapCustom = {
