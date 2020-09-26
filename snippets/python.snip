@@ -1,0 +1,27 @@
+snippet     mainarg
+abbr        import argparse ...
+options     head
+	import argparse
+
+	def parse_arg():
+		parser = argparse.ArgumentParser()
+		parser.add_argument('--${1:name}'${2:})
+		${3:}
+		return parser.parse_args()
+
+	def main(args):
+		${4:pass}
+
+	if __name__ == '__main__':
+		args = parse_arg()
+		main(args)
+
+snippet     rpudb
+abbr        import rpudb ...
+options     head
+	import rpudb; rpudb.set_trace('0.0.0.0')
+
+snippet     rpdb
+abbr        import rpdb ...
+options     head
+	import rpdb; rpdb.set_trace('0.0.0.0')
