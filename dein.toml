@@ -50,8 +50,6 @@ hook_add = '''
                 \   'filename' : 'LightLineFileName',
                 \   'modified' : 'LightLineModified'
                 \   },
-                \ 'separator' : { 'left' : '', 'right' : ''  },
-                \ 'subseparator': { 'left': '', 'right': ''   }
                 \ }
     
     function! LightLineFileName()
