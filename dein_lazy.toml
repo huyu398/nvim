@@ -98,7 +98,7 @@ hook_add = '''
 repo = 'Xuyuanp/nerdtree-git-plugin'
 lazy = 1
 hook_source = '''
-    let g:NERDTreeIndicatorMapCustom = {
+    let g:NERDTreeGitStatusIndicatorMapCustom = {
         \ "Modified"  : "+",
         \ "Staged"    : "*",
         \ "Untracked" : "✭",
