@@ -1,0 +1,30 @@
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+  let g:lightline = {
+    \ 'colorscheme': 'nord',
+    \ 'component' : {
+    \     'mode' : "%{ expand('%:t') =~ 'defx' ? 'defx' : lightline#mode() }",
+    \     'fileencoding' : "%{ winwidth(0) < 50 ? '' : (&fenc !=# '' ? &fenc : &enc) }",
+    \     'fileformat' : "%{ winwidth(0) < 50 ? '' : &ff }",
+    \     'filetype' : "%{ winwidth(0) < 50 ? '' : (&ft !=# '' ? &ft : 'no ft') }"
+    \   },
+    \ 'component_visible_condition' : {
+    \     'fileencoding' : 'winwidth(0) > 50',
+    \     'fileformat' : 'winwidth(0) > 50',
+    \     'filetype' : 'winwidth(0) > 50'
+    \   },
+    \ 'component_function' : {
+    \     'filename' : 'LightLineFileName',
+    \     'modified' : 'LightLineModified'
+    \   },
+    \ }
+
+  function! LightLineFileName()
+    let fname = expand('%:t')
+    return fname =~ 'defx' ? '' : fname
+  endfunction
+  function! LightLineModified()
+    return &modifiable ? (&modified ? '+' : '') : (&ft =~ 'help\|defx' ? '' : '-')
+  endfunction
+'''
