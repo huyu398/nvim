@@ -24,7 +24,6 @@ hook_post_update = '''
 '''
 
 # visual {{{
-
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 hook_add = '''

@@ -1,6 +1,3 @@
-
-
-
 [[plugins]]
 repo = 'Shougo/deol.nvim'
 on_cmd = ['Deol']
@@ -13,10 +10,6 @@ hook_add = '''
 #[[plugins]]
 #repo = 'scrooloose/syntastic'
 #on_ft = ['python']
-
-
-
-
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
