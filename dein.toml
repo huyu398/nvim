@@ -24,12 +24,6 @@ hook_post_update = '''
 '''
 
 # visual {{{
-[[plugins]]
-repo = 'w0ng/vim-hybrid'
-hook_add = '''
-    set background=dark
-    autocmd VimEnter * nested colorscheme hybrid
-'''
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'

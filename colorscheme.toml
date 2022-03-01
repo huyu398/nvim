@@ -1,0 +1,28 @@
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+# hook_add = '''
+#     set background=dark
+#     autocmd VimEnter * nested colorscheme hybrid
+# '''
+
+[[plugins]]
+repo = 'ulwlu/elly.vim'
+# hook_add = '''
+#     set termguicolors
+#     colorscheme elly
+# '''
+
+[[plugins]]
+repo = 'rakr/vim-one'
+# hook_add = '''
+#     colorscheme one
+#     set background=light
+#     set termguicolors
+# '''
+
+[[plugins]]
+repo = 'shaunsingh/nord.nvim'
+hook_add = '''
+    let g:nord_italic = v:false
+    colorscheme nord
+'''

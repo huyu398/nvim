@@ -122,6 +122,7 @@ function! init#dein() abort
         let l:toml_lang = s:config_dir . '/dein_lang.toml'
 
         call dein#load_toml(l:toml, {'lazy' : 0})
+        call dein#load_toml(s:config_dir . '/colorscheme.toml', {'lazy': 0})
         call dein#load_toml(s:config_dir . '/lightline.toml', {'lazy': 0})
         call dein#load_toml(s:config_dir . '/defx.toml', {'lazy': 1})
         call dein#load_toml(s:config_dir . '/vim-choosewin.toml', {'lazy': 1})
