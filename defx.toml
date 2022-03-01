@@ -7,7 +7,7 @@ depends = [
   'vim-devicons',
 ]
 hook_add = '''
-  nnoremap <silent> <Leader>f :<C-u> Defx <CR>
+  nnoremap <silent> <Leader>t :<C-u> Defx <CR>
 '''
 hook_source = '''
   autocmd FileType defx call s:defx_my_settings()

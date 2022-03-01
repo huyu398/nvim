@@ -40,30 +40,8 @@ hook_add = '''
 #repo = 'scrooloose/syntastic'
 #on_ft = ['python']
 
-[[plugins]]
-repo = 'easymotion/vim-easymotion'
-on_map = [
-    '<Plug>(easymotion-f)', '<Plug>(easymotion-F)',
-    '<Plug>(easymotion-sn)', '<Plug>(easymotion-next)', '<Plug>(easymotion-prev)',
-    '<Plug>(easymotion-lineforward)', '<Plug>(easymotion-j)', '<Plug>(easymotion-k)', '<Plug>(easymotion-linebackward)'
-]
-hook_add = '''
-    map f <Plug>(easymotion-f)
-    map F <Plug>(easymotion-F)
 
-    map / <Plug>(easymotion-sn)
-    map n <Plug>(easymotion-next)
-    map N <Plug>(easymotion-prev)
 
-    map <LEADER>h <Plug>(easymotion-lineforward)
-    map <LEADER>j <Plug>(easymotion-j)
-    map <LEADER>k <Plug>(easymotion-k)
-    map <LEADER>l <Plug>(easymotion-linebackward)
-'''
-hook_source = '''
-    set nohlsearch
-    let g:EasyMotion_use_smartsign_us = 1
-'''
 
 [[plugins]]
 repo = 't9md/vim-choosewin'
