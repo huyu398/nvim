@@ -2,8 +2,8 @@
 repo = 'Shougo/dein.vim'
 rev = '2.2'
 
-[[plugins]]
-repo = 'Shougo/denite.nvim'
+# [[plugins]]
+# repo = 'Shougo/denite.nvim'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
