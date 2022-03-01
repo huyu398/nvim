@@ -125,6 +125,7 @@ function! init#dein() abort
         call dein#load_toml(s:config_dir . '/colorscheme.toml', {'lazy': 0})
         call dein#load_toml(s:config_dir . '/lightline.toml', {'lazy': 0})
         call dein#load_toml(s:config_dir . '/defx.toml', {'lazy': 1})
+        call dein#load_toml(s:config_dir . '/nerdcommenter.toml', {'lazy': 1})
         call dein#load_toml(s:config_dir . '/vim-choosewin.toml', {'lazy': 1})
         call dein#load_toml(s:config_dir . '/vim-easymotion.toml', {'lazy': 1})
         call dein#load_toml(l:toml_lazy, {'lazy' : 1})

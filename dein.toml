@@ -33,18 +33,6 @@ hook_add = '''
 # }}}
 
 [[plugins]]
-repo = 'scrooloose/nerdcommenter'
-hook_add = '''
-    let g:NERDSpaceDelims = 1
-    let g:NERDDefaultAlign = 'left'
-    let g:NERDAltDelims_c = 1
-    let g:NERDAltDelims_python = 1
-    filetype plugin on
-    nmap <Leader>x <Plug>NERDCommenterToggle
-    vmap <Leader>x <Plug>NERDCommenterToggle
-'''
-
-[[plugins]]
 repo = 'jiangmiao/auto-pairs'
 hook_add = '''
     let g:AutoPairsFlyMode = 1
