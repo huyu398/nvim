@@ -67,9 +67,9 @@ hook_add = '''
     xmap <Space>M <Plug>(quickhl-manual-reset)
 '''
 
-[[plugins]]
-repo = 'skanehira/vsession'
-on_cmd = ['SaveSession', 'LoadSession', 'DeleteSession']
-hook_add = '''
-    let g:vsession_path = '~/.config/nvim/sessions'
-'''
+# [[plugins]]
+# repo = 'skanehira/vsession'
+# on_cmd = ['SaveSession', 'LoadSession', 'DeleteSession']
+# hook_add = '''
+#     let g:vsession_path = '~/.config/nvim/sessions'
+# '''
