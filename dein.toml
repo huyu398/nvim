@@ -1,5 +1,6 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
+rev = '2.2'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
