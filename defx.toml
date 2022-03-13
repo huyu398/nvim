@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'Shougo/defx.nvim'
-rev = '1.5'
+rev = '6d97ad7'
 depends = [
   'defx-icons',
   'defx-git',
@@ -94,15 +94,24 @@ hook_source = '''
     \ })
   autocmd BufWritePost * call defx#redraw()
   autocmd BufEnter * call defx#redraw()
+  autocmd FileType defx setlocal nonumber
 '''
 
 [[plugins]]
 repo = 'kristijanhusak/defx-icons'
 lazy = 1
+hook_source = '''
+  let g:defx_icons_column_length = 2
+'''
 
 [[plugins]]
 repo = 'kristijanhusak/defx-git'
 lazy = 1
+hook_source = '''
+  call defx#custom#column('git', {
+    \ 'column_length': 2,
+    \ })
+'''
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
