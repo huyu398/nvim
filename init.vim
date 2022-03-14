@@ -131,7 +131,6 @@ function! init#dein() abort
         call dein#load_toml(s:config_dir . '/vim-choosewin.toml', {'lazy': 1})
         call dein#load_toml(s:config_dir . '/vim-easymotion.toml', {'lazy': 1})
         call dein#load_toml(l:toml_lazy, {'lazy' : 1})
-        call dein#load_toml(l:toml_lang, {'lazy' : 1})
 
         call dein#end()
         call dein#save_state()
