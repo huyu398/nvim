@@ -22,8 +22,8 @@ call ddc#custom#patch_global('sourceOptions', {
     \   'forceCompletionPattern': '\S/\S*',
     \ },
     \ 'nvim-lsp': {
-    \ 'mark': 'LSP',
-    \ 'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+    \   'mark': 'LSP',
+    \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
     \ },
     \ })
 
