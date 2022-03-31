@@ -80,6 +80,9 @@ rev = 'v2.2.0'
 [[plugins]]
 repo = 'williamboman/nvim-lsp-installer'
 rev = 'eadf42a'
+depends = [
+    'nvim-lspconfig',
+]
 hook_add = '''
 lua << EOF
 local lsp_installer = require("nvim-lsp-installer")
@@ -123,3 +126,7 @@ lsp_installer.on_server_ready(function(server)
 end)
 EOF
 '''
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+rev = 'v0.1.2'
