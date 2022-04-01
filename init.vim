@@ -18,8 +18,6 @@ let g:loaded_perl_provider=0
 
 " basic settings {{{
 " options {{{
-set autochdir
-
 set mouse-=a
 
 set number
