@@ -127,6 +127,7 @@ function! init#dein() abort
         call dein#load_toml(s:config_dir . '/nvim-treesitter.toml', {'lazy': 0})
         call dein#load_toml(s:config_dir . '/omni_completion.toml', {'lazy': 0})
         call dein#load_toml(s:config_dir . '/defx.toml', {'lazy': 1})
+        call dein#load_toml(s:config_dir . '/lazygit.toml', {'lazy': 1})
         call dein#load_toml(s:config_dir . '/nerdcommenter.toml', {'lazy': 1})
         call dein#load_toml(s:config_dir . '/vim-choosewin.toml', {'lazy': 1})
         call dein#load_toml(s:config_dir . '/vim-easymotion.toml', {'lazy': 1})

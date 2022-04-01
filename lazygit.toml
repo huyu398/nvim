@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'kdheepak/lazygit.nvim'
+rev = 'ca8ea75'
+on_cmd = ['LazyGit']
+hook_add = '''
+    nnoremap <silent> <Leader>g :LazyGit<CR>
+'''
