@@ -94,6 +94,7 @@ hook_source = '''
   autocmd BufWritePost * call defx#redraw()
   autocmd BufEnter * call defx#redraw()
   autocmd FileType defx setlocal nonumber
+  autocmd VimEnter,TabNew * Defx -resume -split=vertical -no-focus
 '''
 
 [[plugins]]
