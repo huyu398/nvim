@@ -130,3 +130,12 @@ EOF
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
 rev = 'v0.1.2'
+
+[[plugins]]
+repo = 'matsui54/denops-signature_help'
+hook_add = '''
+    call signature_help#enable()
+
+    inoremap <expr><c-d> signature_help#scroll(+4)
+    inoremap <expr><c-u> signature_help#scroll(-4)
+'''
