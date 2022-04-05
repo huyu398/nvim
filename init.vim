@@ -75,10 +75,6 @@ noremap k gk
 noremap H gT
 noremap L gt
 
-if has('nvim')
-    tnoremap <ESC> <C-\><C-N>
-    nnoremap <Leader>s :terminal<CR>
-endif
 
 " No need cursor key on normal, visual, and insert mode
 noremap <Up> <Nop>
