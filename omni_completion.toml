@@ -2,15 +2,11 @@
 repo = 'Shougo/ddc.vim'
 rev = 'v2.2.0'
 depends = [
-    'denops.vim'
+    'denops.vim',
+    'pum.vim'
 ]
 hook_add = '''
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? '<C-n>' :
-    \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-    \ '<TAB>' : ddc#manual_complete()
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
+call ddc#custom#patch_global('completionMenu', 'pum.vim')
 call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'vsnip', 'file'])
 call ddc#custom#patch_global('sourceOptions', {
     \ '_': {
@@ -51,6 +47,22 @@ call ddc#custom#patch_filetype(
 
 call ddc#enable()
 set completeopt-=preview
+'''
+
+[[plugins]]
+repo = 'Shougo/pum.vim'
+rev = 'fc2cf83'
+hook_add = '''
+inoremap <silent><expr> <TAB>
+    \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' : '<TAB>'
+inoremap <silent><expr> <S-TAB>
+    \ pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>' : '<S-TAB>'
+inoremap <silent><expr> <C-n>       '<Cmd>call pum#map#insert_relative(+1)<CR>'
+inoremap <silent><expr> <C-p>       '<Cmd>call pum#map#insert_relative(-1)<CR>'
+inoremap <silent><expr> <C-y>       '<Cmd>call pum#map#confirm()<CR>'
+inoremap <silent><expr> <C-e>       '<Cmd>call pum#map#cancel()<CR>'
+inoremap <silent><expr> <PageDown>  '<Cmd>call pum#map#insert_relative_page(+1)<CR>'
+inoremap <silent><expr> <PageUp>    '<Cmd>call pum#map#insert_relative_page(-1)<CR>'
 '''
 
 [[plugins]]
