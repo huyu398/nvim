@@ -14,8 +14,9 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'vsnip', 'file'])
 call ddc#custom#patch_global('sourceOptions', {
     \ '_': {
-    \   'matchers': ['matcher_head'],
-    \   'sorters': ['sorter_rank'],
+    \   'matchers': ['matcher_fuzzy'],
+    \   'sorters': ['sorter_fuzzy'],
+    \   'converters': ['converter_fuzzy'],
     \   'ignoreCase': v:true,
     \ },
     \ 'around': {'mark': 'A'},
@@ -63,6 +64,9 @@ repo = 'Shougo/ddc-sorter_rank'
 
 [[plugins]]
 repo = 'LumaKernel/ddc-file'
+
+[[plugins]]
+repo = 'tani/ddc-fuzzy'
 
 [[plugins]]
 repo = 'Shougo/ddc-nvim-lsp'
