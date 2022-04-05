@@ -118,6 +118,7 @@ function! init#dein() abort
         call dein#load_toml(l:toml, {'lazy' : 0})
         call dein#load_toml(s:config_dir . '/colorscheme.toml', {'lazy': 0})
         call dein#load_toml(s:config_dir . '/lightline.toml', {'lazy': 0})
+        call dein#load_toml(s:config_dir . '/lspconfig.toml', {'lazy': 0})
         call dein#load_toml(s:config_dir . '/nvim-treesitter.toml', {'lazy': 0})
         call dein#load_toml(s:config_dir . '/omni_completion.toml', {'lazy': 0})
         call dein#load_toml(s:config_dir . '/defx.toml', {'lazy': 1})
