@@ -89,6 +89,8 @@ repo = 'hrsh7th/vim-vsnip-integ'
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
 hook_add = '''
+let g:vsnip_snippet_dir = fnamemodify($MYVIMRC, ':h') . '/vsnip'
+
 " Expand
 imap <silent><expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
 smap <silent><expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
