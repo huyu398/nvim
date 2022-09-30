@@ -94,32 +94,32 @@
     },
     "def": {
         "prefix": "def",
-        "body": ["def ${1:funcname}(${2:parameter_list}):", "\t\"\"\"", "\t${3:docstring}", "\t\"\"\"","\t${4:pass}"],
+        "body": ["def ${1:funcname}(${2:parameter_list}):", "\t${4:pass}"],
         "description": "Code snippet for a function definition"
     },
     "def(instance method)": {
         "prefix": "def(instance method)",
-        "body": ["def ${1:funcname}(self, ${2:parameter_list}):", "\t\"\"\"", "\t${3:docstring}", "\t\"\"\"", "\t${4:pass}"],
+        "body": ["def ${1:funcname}(self, ${2:parameter_list}):", "\t${4:pass}"],
         "description": "a instance method"
     },
     "def(class method)": {
         "prefix": "def(class method)",
-        "body": ["@classmethod", "def ${1:funcname}(cls, ${2:parameter_list}):", "\t\"\"\"", "\t${3:docstring}", "\t\"\"\"", "\t${4:pass}"],
+        "body": ["@classmethod", "def ${1:funcname}(cls, ${2:parameter_list}):", "\t${4:pass}"],
         "description": "a class method"
     },
     "def(static method)": {
         "prefix": "def(static method)",
-        "body": ["@staticmethod", "def ${1:funcname}(${2:parameter_list}):", "\t\"\"\"", "\t${3:docstring}", "\t\"\"\"", "\t${4:pass}"],
+        "body": ["@staticmethod", "def ${1:funcname}(${2:parameter_list}):", "\t${4:pass}"],
         "description": "a static method"
     },
     "def(abstract class method)": {
         "prefix": "def(abstract class method)",
-        "body": ["def ${1:funcname}(self, ${2:parameter_list}):", "\t\"\"\"", "\t${3:docstring}", "\t\"\"\"", "\traise NotImplementedError"],
+        "body": ["def ${1:funcname}(self, ${2:parameter_list}):", "\traise NotImplementedError"],
         "description": "Code snippet for an abstract class method"
     },
     "class": {
         "prefix": "class",
-        "body": ["class ${1:classname}(${2:}):", "\t\"\"\"", "\t${3:docstring}", "\t\"\"\"", "\t${4:pass}"],
+        "body": ["class ${1:classname}(${2:}):", "\t${4:pass}"],
         "description": "a class definition"
     },
     "lambda": {

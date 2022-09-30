@@ -1,0 +1,17 @@
+{
+    "func-arrow": {
+        "prefix": "()",
+        "body": ["(${args}) => {${body}}"],
+        "description": "Code snippet for arrow function"
+    },
+    "import": {
+        "prefix": "import",
+        "body": ["import { ${2:members} } from '${1:target}';"],
+        "description": "Code snippet for import members"
+    },
+    "import-default": {
+        "prefix": "import-default",
+        "body": ["import ${2:defaultMember} from '${1:target}';"],
+        "description": "Code snippet for import default"
+    }
+}
