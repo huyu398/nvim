@@ -1,0 +1,16 @@
+[[plugins]]
+repo = 't9md/vim-quickhl'
+rev = 'be1f441'
+on_map = [
+    '<Plug>(quickhl-manual-this)',
+    '<Plug>(quickhl-manual-clear)',
+    '<Plug>(quickhl-manual-reset)',
+]
+hook_add = '''
+    nmap <Space>m <Plug>(quickhl-manual-this)
+    xmap <Space>m <Plug>(quickhl-manual-this)
+    nmap <Space>c <Plug>(quickhl-manual-clear)
+    xmap <Space>c <Plug>(quickhl-manual-clear)
+    nmap <Space>M <Plug>(quickhl-manual-reset)
+    xmap <Space>M <Plug>(quickhl-manual-reset)
+'''
