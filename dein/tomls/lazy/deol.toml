@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'Shougo/deol.nvim'
-rev = '4ecffa4'
+rev = '6a5adf9'
 on_cmd = ['Deol']
 hook_add = '''
     function FloatingDeol() abort
