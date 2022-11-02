@@ -45,7 +45,7 @@ hook_source = '''
     \                'mark:indent:icon:filename:type:size:time')
     nnoremap <silent><buffer><expr> S
     \ defx#do_action('toggle_sort', 'time')
-    nnoremap <silent><buffer><expr> d
+    nnoremap <silent><buffer><expr><nowait> d
     \ defx#do_action('remove')
     nnoremap <silent><buffer><expr> r
     \ defx#do_action('rename')
@@ -65,7 +65,7 @@ hook_source = '''
     \ defx#do_action('cd')
     nnoremap <silent><buffer><expr> q
     \ defx#do_action('quit')
-    nnoremap <silent><buffer><expr> <Space>
+    nnoremap <silent><buffer><expr><nowait> <Space>
     \ defx#do_action('toggle_select') . 'j'
     nnoremap <silent><buffer><expr> *
     \ defx#do_action('toggle_select_all')
