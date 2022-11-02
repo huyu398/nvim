@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'Shougo/defx.nvim'
-rev = '6d97ad7'
+rev = '82ca2c5'
 depends = [
   'defx-icons',
   'defx-git',
