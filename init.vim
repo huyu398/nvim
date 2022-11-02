@@ -111,23 +111,15 @@ function! init#dein() abort
     if dein#load_state(l:dein_dir)
         call dein#begin(l:dein_dir)
 
-        let l:toml = s:config_dir . '/dein.toml'
-        let l:toml_lazy = s:config_dir . '/dein_lazy.toml'
-        let l:toml_lang = s:config_dir . '/dein_lang.toml'
+        let l:inst_tomls = glob(s:config_dir . '/dein/tomls/inst/*.toml')
+        let l:lazy_tomls = glob(s:config_dir . '/dein/tomls/lazy/*.toml')
 
-        call dein#load_toml(l:toml, {'lazy' : 0})
-        call dein#load_toml(s:config_dir . '/colorscheme.toml', {'lazy': 0})
-        call dein#load_toml(s:config_dir . '/lightline.toml', {'lazy': 0})
-        call dein#load_toml(s:config_dir . '/lspconfig.toml', {'lazy': 0})
-        call dein#load_toml(s:config_dir . '/nvim-treesitter.toml', {'lazy': 0})
-        call dein#load_toml(s:config_dir . '/omni_completion.toml', {'lazy': 0})
-        call dein#load_toml(s:config_dir . '/defx.toml', {'lazy': 1})
-        call dein#load_toml(s:config_dir . '/deol.toml', {'lazy': 1})
-        call dein#load_toml(s:config_dir . '/lazygit.toml', {'lazy': 1})
-        call dein#load_toml(s:config_dir . '/nerdcommenter.toml', {'lazy': 1})
-        call dein#load_toml(s:config_dir . '/vim-choosewin.toml', {'lazy': 1})
-        call dein#load_toml(s:config_dir . '/vim-easymotion.toml', {'lazy': 1})
-        call dein#load_toml(l:toml_lazy, {'lazy' : 1})
+        for path in split(l:inst_tomls, '\n')
+            call dein#load_toml(path, {'lazy': 0})
+        endfor
+        for path in split(l:lazy_tomls, '\n')
+            call dein#load_toml(path, {'lazy': 1})
+        endfor
 
         call dein#end()
         call dein#save_state()
