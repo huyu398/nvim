@@ -35,13 +35,6 @@
 # '''
 
 [[plugins]]
-repo = 'osyo-manga/vim-over'
-on_cmd = ['OverCommandLine']
-hook_add = '''
-    nnoremap <silent> <LEADER>m :OverCommandLine<ENTER>%s/
-'''
-
-[[plugins]]
 repo = 't9md/vim-quickhl'
 on_map = ['<Plug>(quickhl-manual-this)', '<Plug>(quickhl-manual-reset)']
 hook_add = '''

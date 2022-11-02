@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+rev = '878f83b'
+on_cmd = ['OverCommandLine']
+hook_add = '''
+    nnoremap <silent> <LEADER>m :OverCommandLine<ENTER>%s/
+'''
