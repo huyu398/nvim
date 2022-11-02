@@ -99,6 +99,7 @@ hook_source = '''
   autocmd BufEnter * call defx#redraw()
   autocmd FileType defx setlocal nonumber
   autocmd VimEnter,TabNew * Defx -resume -split=vertical -no-focus
+  autocmd bufenter * if (winnr('$') == 1 && &filetype == 'defx') | q | endif
 '''
 
 [[plugins]]
