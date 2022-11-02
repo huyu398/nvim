@@ -1,0 +1,9 @@
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+rev = '82c3eb1'
+depends = [
+  'vim-devicons',
+]
+hook_source = '''
+  let g:defx_icons_column_length = 2
+'''
