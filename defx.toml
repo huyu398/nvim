@@ -81,6 +81,10 @@ hook_source = '''
     \ defx#do_action('change_vim_cwd')
   endfunction
   
+  call defx#custom#column('filename', {
+    \ 'min_width': 0,
+    \ 'max_width': 33,
+    \ })
   call defx#custom#option('_', {
     \ 'winwidth': 35,
     \ 'split': 'vertical',
