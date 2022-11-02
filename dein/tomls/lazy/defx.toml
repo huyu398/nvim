@@ -101,8 +101,3 @@ hook_source = '''
   autocmd VimEnter,TabNew * Defx -resume -split=vertical -no-focus
   autocmd bufenter * if (winnr('$') == 1 && &filetype == 'defx') | q | endif
 '''
-
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
-rev = 'v0.11.0'
-lazy = 1
