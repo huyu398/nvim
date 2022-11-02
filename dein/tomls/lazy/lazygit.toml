@@ -1,7 +1,15 @@
 [[plugins]]
 repo = 'kdheepak/lazygit.nvim'
-rev = 'ca8ea75'
-on_cmd = ['LazyGit']
+rev = '56045b4'
+on_cmd = [
+    'LazyGit',
+    'LazyGitConfig',
+    'LazyGitFilter',
+    'LazyGitFilterCurrentFile',
+]
 hook_add = '''
-    nnoremap <silent> <Leader>g :LazyGit<CR>
+    nnoremap <silent> <Leader>gg :LazyGit<CR>
+    nnoremap <silent> <Leader>gc :LazyGitConfig<CR>
+    nnoremap <silent> <Leader>gf :LazyGitFilter<CR>
+    nnoremap <silent> <Leader>gh :LazyGitFilterCurrentFile<CR>
 '''
