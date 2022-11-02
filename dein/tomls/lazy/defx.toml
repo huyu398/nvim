@@ -103,15 +103,6 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'kristijanhusak/defx-git'
-lazy = 1
-hook_source = '''
-  call defx#custom#column('git', {
-    \ 'column_length': 2,
-    \ })
-'''
-
-[[plugins]]
 repo = 'ryanoasis/vim-devicons'
 rev = 'v0.11.0'
 lazy = 1
