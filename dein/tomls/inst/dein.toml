@@ -5,24 +5,6 @@ rev = '168a6da'
 # [[plugins]]
 # repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-hook_add = '''
-    if dein#util#_is_windows()
-        let g:vimproc#download_windows_dll = 1
-    endif
-'''
-hook_post_update = '''
-    if executable('make')
-        let cmd = 'make'
-    elseif executable('gmake')
-        let cmd = 'gmake'
-    else
-        let cmd = ''
-    endif
-    let g:dein#plugin.build = cmd
-'''
-
 # visual {{{
 [[plugins]]
 repo = 'Yggdroot/indentLine'
