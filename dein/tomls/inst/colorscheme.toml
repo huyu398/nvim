@@ -22,6 +22,7 @@ repo = 'rakr/vim-one'
 
 [[plugins]]
 repo = 'shaunsingh/nord.nvim'
+rev = 'a6bb6a8'
 hook_add = '''
     let g:nord_italic = v:false
     colorscheme nord
