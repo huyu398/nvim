@@ -1,5 +1,6 @@
 [[plugins]]
 repo = 't9md/vim-choosewin'
+rev = '839da60'
 on_map = ['<Plug>(choosewin)']
 hook_add = '''
     nmap - <Plug>(choosewin)
