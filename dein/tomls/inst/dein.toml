@@ -6,11 +6,4 @@ rev = '168a6da'
 # repo = 'Shougo/denite.nvim'
 
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
-hook_add = '''
-    let g:AutoPairsFlyMode = 1
-    let g:AutoPairsShortcutBackInsert = '<C-B>'
-'''
-
-[[plugins]]
 repo = 'tpope/vim-surround'
