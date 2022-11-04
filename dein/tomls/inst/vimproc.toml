@@ -1,5 +1,6 @@
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
+rev = 'f396529'
 hook_add = '''
     if dein#util#_is_windows()
         let g:vimproc#download_windows_dll = 1
