@@ -18,7 +18,7 @@ let g:loaded_perl_provider=0
 
 " basic settings {{{
 " options {{{
-set mouse-=a
+set mouse=
 
 set number
 set cursorline
