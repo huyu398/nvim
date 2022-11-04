@@ -1,2 +1,3 @@
 [[plugins]]
 repo = 'tpope/vim-surround'
+rev = '3d188ed'
