@@ -5,5 +5,3 @@ rev = '168a6da'
 # [[plugins]]
 # repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'tpope/vim-surround'
