@@ -1,5 +1,6 @@
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
+rev = '58f61e5'
 hook_add = '''
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
