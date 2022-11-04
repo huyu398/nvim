@@ -5,14 +5,6 @@ rev = '168a6da'
 # [[plugins]]
 # repo = 'Shougo/denite.nvim'
 
-# visual {{{
-[[plugins]]
-repo = 'Yggdroot/indentLine'
-hook_add = '''
-    let g:indentLine_setConceal = 0
-'''
-# }}}
-
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
 hook_add = '''
