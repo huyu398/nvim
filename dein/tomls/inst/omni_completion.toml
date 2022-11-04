@@ -1,10 +1,6 @@
 [[plugins]]
 repo = 'Shougo/ddc.vim'
 rev = 'v2.2.0'
-depends = [
-    'denops.vim',
-    'pum.vim'
-]
 hook_add = '''
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
 call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'vsnip', 'file'])
