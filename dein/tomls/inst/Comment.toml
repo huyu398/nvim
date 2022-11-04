@@ -1,0 +1,10 @@
+[[plugins]]
+repo = 'numToStr/Comment.nvim'
+rev = 'v0.7.0'
+hook_add = '''
+lua << EOF
+require('Comment').setup({
+    ignore = '^$',
+})
+EOF
+'''
