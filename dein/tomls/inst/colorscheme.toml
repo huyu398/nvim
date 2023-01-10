@@ -6,13 +6,6 @@ repo = 'w0ng/vim-hybrid'
 # '''
 
 [[plugins]]
-repo = 'ulwlu/elly.vim'
-# hook_add = '''
-#     set termguicolors
-#     colorscheme elly
-# '''
-
-[[plugins]]
 repo = 'rakr/vim-one'
 # hook_add = '''
 #     colorscheme one
