@@ -1,0 +1,4 @@
+[[plugins]]
+repo = 'github/copilot.vim'
+hook_add = '''
+'''
