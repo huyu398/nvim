@@ -1,0 +1,10 @@
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
+rev = '93e58e1'
+depends = ['mason']
+lua_add = '''
+require('mason-lspconfig').setup({
+    ensure_installed = {'pyright', 'tsserver'},
+    automatic_installation = true,
+})
+'''

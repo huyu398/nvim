@@ -1,3 +1,0 @@
-[[plugins]]
-repo = 'neovim/nvim-lspconfig'
-rev = 'v0.1.3'
