@@ -123,6 +123,7 @@ function! init#dein() abort
 
         call dein#end()
         call dein#save_state()
+        call map(dein#check_clean(), "delete(v:val, 'rf')")
     endif
 
     if dein#check_install(['vimproc.vim'])

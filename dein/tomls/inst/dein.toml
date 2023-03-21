@@ -1,3 +1,2 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
-rev = '168a6da'
