@@ -2,7 +2,8 @@
 repo = 'neovim/nvim-lspconfig'
 rev = 'v0.1.3'
 depends = ['mason', 'mason-lspconfig']
-lua_add = '''
+on_event = 'VimEnter'
+lua_source = '''
 local nvim_lsp = require('lspconfig')
 
 local mason_lspcofig = require('mason-lspconfig')
