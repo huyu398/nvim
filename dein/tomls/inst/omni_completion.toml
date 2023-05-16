@@ -3,7 +3,7 @@ repo = 'Shougo/ddc.vim'
 rev = 'v2.2.0'
 hook_add = '''
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
-call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'vsnip', 'file'])
+call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'vsnip', 'file', 'buffer'])
 call ddc#custom#patch_global('sourceOptions', {
     \ '_': {
     \   'matchers': ['matcher_fuzzy'],
@@ -17,6 +17,7 @@ call ddc#custom#patch_global('sourceOptions', {
     \   'isVolatile': v:true,
     \   'forceCompletionPattern': '\S/\S*',
     \ },
+    \ 'buffer': {'mark': 'B'},
     \ 'nvim-lsp': {
     \   'mark': 'LSP',
     \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
@@ -26,6 +27,10 @@ call ddc#custom#patch_global('sourceOptions', {
 call ddc#custom#patch_global('sourceParams', {
     \ 'around': {'maxSize': 500},
     \ 'file': {'smartCase': v:true},
+    \ 'buffer': {
+    \   'requireSameFiletype': v:false,
+    \   'bufNameStyle': 'basename',
+    \ }
     \ })
 
 call ddc#custom#patch_filetype(
@@ -72,6 +77,10 @@ repo = 'Shougo/ddc-sorter_rank'
 
 [[plugins]]
 repo = 'LumaKernel/ddc-file'
+
+[[plugins]]
+repo = 'matsui54/ddc-buffer'
+rev = 'e417e47'
 
 [[plugins]]
 repo = 'tani/ddc-fuzzy'
