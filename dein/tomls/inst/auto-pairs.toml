@@ -4,4 +4,5 @@ rev = '39f06b8'
 hook_add = '''
     let g:AutoPairsFlyMode = 1
     let g:AutoPairsShortcutBackInsert = '<C-B>'
+    let g:AutoPairsMoveCharacter = "(){}\"'"
 '''
