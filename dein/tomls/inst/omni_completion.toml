@@ -124,3 +124,10 @@ hook_add = '''
     inoremap <expr><c-d> signature_help#scroll(+4)
     inoremap <expr><c-u> signature_help#scroll(-4)
 '''
+
+[[plugins]]
+repo = 'matsui54/denops-popup-preview.vim'
+rev = 'c1b5c6e'
+hook_add = '''
+    call popup_preview#enable()
+'''
