@@ -66,6 +66,7 @@ inoremap <silent><expr> <PageUp>    '<Cmd>call pum#map#insert_relative_page(-1)<
 
 [[plugins]]
 repo = 'LumaKernel/ddc-source-file'
+rev = 'f10a559'
 
 [[plugins]]
 repo = 'matsui54/ddc-buffer'
@@ -73,15 +74,19 @@ rev = 'e417e47'
 
 [[plugins]]
 repo = 'tani/ddc-fuzzy'
+rev = '146efed'
 
 [[plugins]]
 repo = 'Shougo/ddc-source-nvim-lsp'
+rev = 'a5b54a0'
 
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip-integ'
+rev = '1930f0f'
 
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
+rev = '7753ba9'
 hook_add = '''
 let g:vsnip_snippet_dir = fnamemodify($MYVIMRC, ':h') . '/vsnip'
 
@@ -118,6 +123,7 @@ rev = 'v2.2.0'
 
 [[plugins]]
 repo = 'matsui54/denops-signature_help'
+rev = '8a8df4c'
 hook_add = '''
     call signature_help#enable()
 
