@@ -3,7 +3,7 @@ repo = 'Shougo/ddc.vim'
 rev = 'v2.2.0'
 hook_add = '''
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
-call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'vsnip', 'file', 'buffer'])
+call ddc#custom#patch_global('sources', ['nvim-lsp', 'buffer', 'vsnip', 'file'])
 call ddc#custom#patch_global('sourceOptions', {
     \ '_': {
     \   'matchers': ['matcher_fuzzy'],
@@ -11,7 +11,6 @@ call ddc#custom#patch_global('sourceOptions', {
     \   'converters': ['converter_fuzzy'],
     \   'ignoreCase': v:true,
     \ },
-    \ 'around': {'mark': 'A'},
     \ 'file': {
     \   'mark': 'F',
     \   'isVolatile': v:true,
@@ -25,7 +24,6 @@ call ddc#custom#patch_global('sourceOptions', {
     \ })
 
 call ddc#custom#patch_global('sourceParams', {
-    \ 'around': {'maxSize': 500},
     \ 'file': {'smartCase': v:true},
     \ 'buffer': {
     \   'requireSameFiletype': v:false,
@@ -65,15 +63,6 @@ inoremap <silent><expr> <C-e>       '<Cmd>call pum#map#cancel()<CR>'
 inoremap <silent><expr> <PageDown>  '<Cmd>call pum#map#insert_relative_page(+1)<CR>'
 inoremap <silent><expr> <PageUp>    '<Cmd>call pum#map#insert_relative_page(-1)<CR>'
 '''
-
-[[plugins]]
-repo = 'Shougo/ddc-around'
-
-[[plugins]]
-repo = 'Shougo/ddc-matcher_head'
-
-[[plugins]]
-repo = 'Shougo/ddc-sorter_rank'
 
 [[plugins]]
 repo = 'LumaKernel/ddc-file'
