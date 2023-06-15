@@ -2,7 +2,7 @@
 repo = 'neovim/nvim-lspconfig'
 rev = 'v0.1.4' # 2022-12-20
 depends = ['mason.nvim', 'mason-lspconfig.nvim']
-on_event = 'VimEnter'
+on_event = 'BufRead'
 lua_source = '''
 local nvim_lsp = require('lspconfig')
 

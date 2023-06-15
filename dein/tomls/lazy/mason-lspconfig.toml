@@ -2,7 +2,7 @@
 repo = 'williamboman/mason-lspconfig.nvim'
 rev = 'v1.7.1' # 2023-06-05
 depends = ['mason.nvim']
-on_event = 'VimEnter'
+on_event = 'BufRead'
 lua_source = '''
 require('mason-lspconfig').setup({
     ensure_installed = {'pyright', 'tsserver'},
