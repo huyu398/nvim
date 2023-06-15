@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'williamboman/mason.nvim'
-rev = 'fd1c061'
+rev = 'v1.2.1' # 2023-06-13
 on_event = 'VimEnter'
 lua_source = '''
 require('mason').setup()

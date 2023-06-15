@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'williamboman/mason-lspconfig.nvim'
-rev = '93e58e1'
+rev = 'v1.7.1' # 2023-06-05
 depends = ['mason.nvim']
 on_event = 'VimEnter'
 lua_source = '''
