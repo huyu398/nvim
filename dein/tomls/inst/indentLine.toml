@@ -1,6 +1,0 @@
-[[plugins]]
-repo = 'Yggdroot/indentLine'
-rev = 'd15d63b'
-hook_add = '''
-    let g:indentLine_setConceal = 0
-'''
