@@ -3,7 +3,7 @@ repo = 'itchyny/lightline.vim'
 rev = 'b1e91b4'
 hook_add = '''
   let g:lightline = {
-    \ 'colorscheme': 'nord',
+    \ 'colorscheme': 'nordfox',
     \ 'component' : {
     \     'mode' : "%{ &ft == 'defx' ? 'defx' : lightline#mode() }",
     \     'fileencoding' : "%{ winwidth(0) < 50 ? '' : (&fenc !=# '' ? &fenc : &enc) }",
