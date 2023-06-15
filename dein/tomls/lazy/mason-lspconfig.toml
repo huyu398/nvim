@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'williamboman/mason-lspconfig.nvim'
 rev = '93e58e1'
-depends = ['mason']
+depends = ['mason.nvim']
 on_event = 'VimEnter'
 lua_source = '''
 require('mason-lspconfig').setup({
