@@ -1,0 +1,17 @@
+[[plugins]]
+repo = 'nvim-lualine/lualine.nvim'
+rev = '05d78e9' # 2023-05-05
+lua_add = '''
+require('lualine').setup({
+    sections = {
+        lualine_b = {
+                'branch', 'diff', {
+                'diagnostics',
+                fmt = function(name, context)
+                    return name
+                end
+            },
+        },
+    },
+})
+'''
