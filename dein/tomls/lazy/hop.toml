@@ -1,0 +1,19 @@
+[[plugins]]
+repo = 'phaazon/hop.nvim'
+rev = 'v2.0.3' # 2022-10-31
+on_cmd = [
+    'HopVerticalBC', 'HopVerticalAC', 'HopPattern',
+]
+lua_add = '''
+keymap_wrapper = function(keymap, command)
+    vim.api.nvim_set_keymap('n', keymap, command, { noremap = true, silent = true })
+end
+
+keymap_wrapper('/', ':HopPattern<CR>')
+
+keymap_wrapper('<leader>k', ':HopVerticalBC<CR>')
+keymap_wrapper('<leader>j', ':HopVerticalAC<CR>')
+'''
+lua_source = '''
+require('hop').setup()
+'''
