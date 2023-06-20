@@ -1,8 +1,0 @@
-[[plugins]]
-repo = 'kristijanhusak/defx-git'
-rev = '324552f'
-hook_source = '''
-  call defx#custom#column('git', {
-    \ 'column_length': 2,
-    \ })
-'''
