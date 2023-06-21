@@ -9,18 +9,19 @@ on_cmd = ['Neotree']
 lua_add = '''
 vim.api.nvim_set_keymap(
     'n', '<Leader>t',
-    ':Neotree source=filesystem toggle=true <CR>',
+    ':Neotree source=filesystem reveal=true toggle=true <CR>',
     { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
     'n', '<Leader>b',
-    ':Neotree source=buffers toggle=true <CR>',
+    ':Neotree source=buffers reveal=true toggle=true <CR>',
     { noremap = true, silent = true }
 )
 '''
 lua_source = '''
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 require('neo-tree').setup({
+    close_if_last_window = true,
     window = {
         mappings = {
             ['S'] = '',
@@ -33,6 +34,7 @@ require('neo-tree').setup({
             hide_dotfiles = false,
             hide_gitignored = false,
         },
+        use_libuv_file_watcher = true,
     },
     default_component_configs = {
         icon = {
