@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'j-hui/fidget.nvim'
+rev = 'legacy' # 2023-06-10
+on_event = 'LspAttach'
+lua_source = '''
+require('fidget').setup()
+'''
