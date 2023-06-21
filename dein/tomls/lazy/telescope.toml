@@ -1,0 +1,10 @@
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+rev = '0.1.2' # 2023-06-09
+depends = ['plenary.nvim']
+on_cmd = ['Telescope']
+lua_add = '''
+local keymap_opts = { noremap=true, silent=true }
+vim.keymap.set('n', '<Leader>ff', '<cmd>Telescope find_files hidden=true<cr>', keymap_opts)
+vim.keymap.set('n', '<Leader>fg', '<cmd>Telescope live_grep<cr>',  keymap_opts)
+'''
