@@ -4,6 +4,7 @@ rev = '2.64' # 2023-06-08
 depends = [
     'plenary.nvim',
     'nui.nvim',
+    'nvim-window-picker',
 ]
 on_cmd = ['Neotree']
 lua_add = '''
