@@ -1,0 +1,12 @@
+[[plugins]]
+repo = 'danymat/neogen'
+rev = '2.15.2' # 2023-06-09
+depends = ['nvim-treesitter']
+on_cmd = ['Neogen']
+lua_source = '''
+require('neogen').setup({
+    languages = {
+        python = { template = { annotation_convention = 'google_docstrings' } }
+    }
+})
+'''
