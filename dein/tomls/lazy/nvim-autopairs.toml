@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'windwp/nvim-autopairs'
+rev = '41803bd' # 2023-06-14
+on_event = ['InsertEnter']
+lua_source = '''
+require('nvim-autopairs').setup({})
+'''

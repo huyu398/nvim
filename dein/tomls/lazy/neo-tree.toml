@@ -1,0 +1,80 @@
+[[plugins]]
+repo = 'nvim-neo-tree/neo-tree.nvim'
+rev = '2.64' # 2023-06-08
+depends = [
+    'plenary.nvim',
+    'nui.nvim',
+    'nvim-window-picker',
+]
+on_cmd = ['Neotree']
+lua_add = '''
+vim.api.nvim_set_keymap(
+    'n', '<Leader>t',
+    ':Neotree source=filesystem reveal=true toggle=true <CR>',
+    { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+    'n', '<Leader>b',
+    ':Neotree source=buffers reveal=true toggle=true <CR>',
+    { noremap = true, silent = true }
+)
+'''
+lua_source = '''
+vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+require('neo-tree').setup({
+    close_if_last_window = true,
+    window = {
+        mappings = {
+            ['S'] = '',
+            ['s'] = 'open_split',
+            ['v'] = 'open_vsplit',
+        },
+    },
+    filesystem = {
+        filtered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = false,
+        },
+        use_libuv_file_watcher = true,
+    },
+    default_component_configs = {
+        icon = {
+            folder_empty = "󰜌",
+            folder_empty_open = "󰜌",
+        },
+        git_status = {
+            symbols = {
+                renamed  = "󰁕",
+                unstaged = "󰄱",
+            },
+        },
+    },
+    document_symbols = {
+        kinds = {
+            File = { icon = "󰈙", hl = "Tag" },
+            Namespace = { icon = "󰌗", hl = "Include" },
+            Package = { icon = "󰏖", hl = "Label" },
+            Class = { icon = "󰌗", hl = "Include" },
+            Property = { icon = "󰆧", hl = "@property" },
+            Enum = { icon = "󰒻", hl = "@number" },
+            Function = { icon = "󰊕", hl = "Function" },
+            String = { icon = "󰀬", hl = "String" },
+            Number = { icon = "󰎠", hl = "Number" },
+            Array = { icon = "󰅪", hl = "Type" },
+            Object = { icon = "󰅩", hl = "Type" },
+            Key = { icon = "󰌋", hl = "" },
+            Struct = { icon = "󰌗", hl = "Type" },
+            Operator = { icon = "󰆕", hl = "Operator" },
+            TypeParameter = { icon = "󰊄", hl = "Type" },
+            StaticMethod = { icon = '󰠄 ', hl = 'Function' },
+        }
+    },
+    -- Add this section only if you've configured source selector.
+    source_selector = {
+        sources = {
+            { source = "filesystem", display_name = " 󰉓 Files " },
+            { source = "git_status", display_name = " 󰊢 Git " },
+        },
+    },
+})
+'''

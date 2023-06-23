@@ -1,0 +1,9 @@
+[[plugins]]
+repo = 'ErichDonGubler/lsp_lines.nvim'
+rev = '3b57922' # 2022-07-24
+on_event = ['LspAttach']
+lua_source = '''
+require('lsp_lines').setup()
+vim.diagnostic.config({ virtual_text = false, })
+vim.keymap.set('n', '<leader>l', require("lsp_lines").toggle, { noremap = true, silent = true })
+'''

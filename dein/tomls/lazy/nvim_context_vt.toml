@@ -1,0 +1,4 @@
+[[plugins]]
+repo = 'haringsrob/nvim_context_vt'
+rev = 'dcfd296' # 2023-05-26
+on_event = 'BufRead'

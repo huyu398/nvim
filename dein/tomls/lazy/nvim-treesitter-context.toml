@@ -1,0 +1,12 @@
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter-context'
+rev = '6eccc44' # 2023-06-19
+depends = ['nvim-treesitter']
+on_event = 'BufRead'
+lua_source = '''
+require('treesitter-context').setup({
+    enable = true,
+    mode = 'topline',
+    separator = '─',
+})
+'''

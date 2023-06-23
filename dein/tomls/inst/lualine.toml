@@ -1,0 +1,43 @@
+[[plugins]]
+repo = 'nvim-lualine/lualine.nvim'
+rev = '05d78e9' # 2023-05-05
+lua_add = '''
+--- @param trunc_width number 画面幅がtrunc_widthより小さい場合、コンポーネントを短縮する
+--- @param trunc_len number trunc_widthより小さい場合、コンポーネントをtrunc_len文字に短縮する
+--- @param hide_width number 画面幅がhide_widthより小さい場合、コンポーネントを非表示にする
+--- @param no_ellipsis boolean 切り捨て後に末尾に'...'を追加するかどうか
+--- trunc_width, trunc_len, hide_width, no_ellipsisを引数に取り、コンポーネントを適切にフォーマットする関数を返す
+local function trunc(trunc_width, trunc_len, hide_width, no_ellipsis)
+  return function(str)
+    local win_width = vim.fn.winwidth(0)
+    if hide_width and win_width < hide_width then return ''
+    elseif trunc_width and trunc_len and win_width < trunc_width and #str > trunc_len then
+       return str:sub(1, trunc_len) .. (no_ellipsis and '' or '...')
+    end
+    return str
+  end
+end
+
+require('lualine').setup({
+    sections = {
+        lualine_a = {
+            { 'mode', fmt=trunc(80, 1, 0, true) },
+        },
+        lualine_b = {
+            { 'branch', fmt=trunc(0, -1, 80, true) },
+            'diff', 'diagnostics'
+        },
+        lualine_c = {
+            { 'filename', fmt = function(name, context)
+                if vim.bo.filetype == 'neo-tree' then return '' end
+                return name
+            end },
+        },
+        lualine_x = {
+            { 'encoding',   fmt=trunc(0, -1, 80, true) },
+            { 'fileformat', fmt=trunc(0, -1, 80, true) },
+            { 'filetype',   fmt=trunc(0, -1, 80, true) },
+        },
+    },
+})
+'''

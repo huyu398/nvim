@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'williamboman/mason.nvim'
+rev = 'v1.2.1' # 2023-06-13
+on_event = 'BufRead'
+lua_source = '''
+require('mason').setup()
+'''

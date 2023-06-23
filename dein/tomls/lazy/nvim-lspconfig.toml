@@ -1,0 +1,79 @@
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+rev = 'v0.1.4' # 2022-12-20
+depends = ['mason.nvim', 'mason-lspconfig.nvim']
+on_event = 'BufRead'
+lua_source = '''
+local nvim_lsp = require('lspconfig')
+
+local mason_lspcofig = require('mason-lspconfig')
+-- install している server の起動準備
+mason_lspcofig.setup_handlers({ function(server_name)
+    local opts = {}
+    local keymap_opts = { noremap=true, silent=true }
+
+    -- キーマップを設定するための wrapper 関数
+    keymap_wrapper = function(keymap, command)
+        vim.api.nvim_set_keymap('n', keymap, command, keymap_opts)
+    end
+    keymap_buf_wrapper = function(keymap, command)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', keymap, command, keymap_opts)
+    end
+
+    keymap_wrapper('<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
+    keymap_wrapper(      '[d', '<cmd>lua vim.diagnostic.goto_prev() <CR>')
+    keymap_wrapper(      ']d', '<cmd>lua vim.diagnostic.goto_next() <CR>')
+    keymap_wrapper('<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
+
+    opts.on_attach = function(client, bufnr)
+        keymap_wrapper(       'gD', '<cmd>lua vim.lsp.buf.declaration()                               <CR>')
+        keymap_wrapper(      'gDs', '<cmd>split     | lua vim.lsp.buf.declaration()                   <CR>')
+        keymap_wrapper(      'gDv', '<cmd>vsplit    | lua vim.lsp.buf.declaration()                   <CR>')
+        keymap_wrapper(      'gDt', '<cmd>tab split | lua vim.lsp.buf.declaration()                   <CR>')
+        keymap_wrapper(       'gd', '<cmd>lua vim.lsp.buf.definition()                                <CR>')
+        keymap_wrapper(      'gds', '<cmd>split     | lua vim.lsp.buf.definition()                    <CR>')
+        keymap_wrapper(      'gdv', '<cmd>vsplit    | lua vim.lsp.buf.definition()                    <CR>')
+        keymap_wrapper(      'gdt', '<cmd>tab split | lua vim.lsp.buf.definition()                    <CR>')
+        keymap_wrapper(        'K', '<cmd>lua vim.lsp.buf.hover()                                     <CR>')
+        keymap_wrapper(       'gi', '<cmd>lua vim.lsp.buf.implementation()                            <CR>')
+        keymap_wrapper(    '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()                            <CR>')
+        keymap_wrapper('<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()                      <CR>')
+        keymap_wrapper('<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()                   <CR>')
+        keymap_wrapper('<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
+        keymap_wrapper('<space>D' , '<cmd>lua vim.lsp.buf.type_definition()                           <CR>')
+        keymap_wrapper('<space>rn', '<cmd>lua vim.lsp.buf.rename()                                    <CR>')
+        keymap_wrapper('<space>ca', '<cmd>lua vim.lsp.buf.code_action()                               <CR>')
+        keymap_wrapper(       'gr', '<cmd>lua vim.lsp.buf.references()                                <CR>')
+        keymap_wrapper('<space>f' , '<cmd>lua vim.lsp.buf.format({ async = true })                    <CR>')
+    end
+
+    if server_name == 'pyright' then
+        opts.settings = {
+            python = {
+                analysis = {
+                    autoImportCompletions = false,
+                },
+            },
+        }
+    end
+
+    -- LSP の setup
+    -- setup をしないと server は動作しない
+    nvim_lsp[server_name].setup(opts)
+end })
+
+vim.api.nvim_create_augroup('QuickFixAutoCommands', {})
+vim.api.nvim_create_autocmd('FileType', {
+    group = 'QuickFixAutoCommands',
+    pattern = 'qf',
+    -- command = 'nnoremap <buffer> <CR> <CR>:ccl<CR>:lcl<CR>',
+    callback = function()
+        local win_info = vim.fn.getwininfo(vim.fn.win_getid())[1]
+        if win_info.loclist == 1 then
+            vim.api.nvim_set_keymap('n', '<CR>', '<CR>:lcl<CR>', { noremap=true, silent=true })
+        elseif win_info.quickfix == 1 then
+            vim.api.nvim_set_keymap('n', '<CR>', '<CR>:ccl<CR>', { noremap=true, silent=true })
+        end
+    end
+})
+'''

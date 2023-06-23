@@ -1,0 +1,10 @@
+[[plugins]]
+repo = 'rcarriga/nvim-notify'
+rev = '3.12.0' # 2023-06-05
+lua_add = '''
+require('notify').setup({
+    top_down = false,
+})
+vim.notify = require('notify')
+vim.keymap.set('n', '<m-l>', require('notify').dismiss, { noremap = true, silent = true })
+'''

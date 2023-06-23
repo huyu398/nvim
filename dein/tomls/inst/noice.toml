@@ -1,0 +1,10 @@
+[[plugins]]
+repo = 'folke/noice.nvim'
+rev = 'v1.15.1' # 2023-06-10
+depends = [
+    'nui.nvim',
+    'nvim-notify',
+]
+lua_add = '''
+require('noice').setup()
+'''

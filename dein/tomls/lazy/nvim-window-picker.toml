@@ -1,0 +1,14 @@
+[[plugins]]
+repo = 's1n7ax/nvim-window-picker'
+rev = 'v2.0.0' # 2023-06-21
+on_cmd = ['Neotree']
+lua_source = '''
+require('window-picker').setup({
+    picker_config = {
+        statusline_winbar_picker = {
+            use_winber = 'always',
+        },
+    },
+    show_propt = false,
+})
+'''

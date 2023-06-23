@@ -11,11 +11,14 @@ else
 endif
 " }}}
 
+let g:loaded_python_provider=0
+let g:loaded_ruby_provider=0
+let g:loaded_node_provider=0
+let g:loaded_perl_provider=0
+
 " basic settings {{{
 " options {{{
-set autochdir
-
-set mouse-=a
+set mouse=
 
 set number
 set cursorline
@@ -47,6 +50,20 @@ if has('persistent_undo')
 endif
 
 set ignorecase
+
+" let g:clipboard = {
+"     \   'name': 'myClipboard',
+"     \   'copy': {
+"     \      '+': 'win32yank.exe -i',
+"     \      '*': 'win32yank.exe -i',
+"     \    },
+"     \   'paste': {
+"     \      '+': 'win32yank.exe -o',
+"     \      '*': 'win32yank.exe -o',
+"     \   },
+"     \   'cache_enabled': 1,
+"     \ }
+" set clipboard^=unnamedplus
 " }}}
 
 " mappings {{{
@@ -58,10 +75,6 @@ noremap k gk
 noremap H gT
 noremap L gt
 
-if has('nvim')
-    tnoremap <ESC> <C-\><C-N>
-    nnoremap <Leader>s :terminal<CR>
-endif
 
 " No need cursor key on normal, visual, and insert mode
 noremap <Up> <Nop>
@@ -98,16 +111,19 @@ function! init#dein() abort
     if dein#load_state(l:dein_dir)
         call dein#begin(l:dein_dir)
 
-        let l:toml = s:config_dir . '/dein.toml'
-        let l:toml_lazy = s:config_dir . '/dein_lazy.toml'
-        let l:toml_lang = s:config_dir . '/dein_lang.toml'
+        let l:inst_tomls = glob(s:config_dir . '/dein/tomls/inst/*.toml')
+        let l:lazy_tomls = glob(s:config_dir . '/dein/tomls/lazy/*.toml')
 
-        call dein#load_toml(l:toml, {'lazy' : 0})
-        call dein#load_toml(l:toml_lazy, {'lazy' : 1})
-        call dein#load_toml(l:toml_lang, {'lazy' : 1})
+        for path in split(l:inst_tomls, '\n')
+            call dein#load_toml(path, {'lazy': 0})
+        endfor
+        for path in split(l:lazy_tomls, '\n')
+            call dein#load_toml(path, {'lazy': 1})
+        endfor
 
         call dein#end()
         call dein#save_state()
+        call map(dein#check_clean(), "delete(v:val, 'rf')")
     endif
 
     if dein#check_install(['vimproc.vim'])

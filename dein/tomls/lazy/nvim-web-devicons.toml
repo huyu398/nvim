@@ -1,0 +1,3 @@
+[[plugins]]
+repo = 'nvim-tree/nvim-web-devicons'
+rev = '2a12502' # 2023-05-23

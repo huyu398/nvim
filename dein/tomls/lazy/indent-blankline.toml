@@ -1,0 +1,10 @@
+[[plugins]]
+repo = 'lukas-reineke/indent-blankline.nvim'
+rev = 'v2.20.6' # 2023-05-26
+on_event = 'BufRead'
+lua_source = '''
+require('indent_blankline').setup({
+    show_current_context = true,
+    show_current_context_start = true,
+})
+'''
