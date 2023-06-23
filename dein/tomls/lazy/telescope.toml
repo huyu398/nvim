@@ -8,3 +8,19 @@ local keymap_opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<Leader>ff', '<cmd>Telescope find_files hidden=true<cr>', keymap_opts)
 vim.keymap.set('n', '<Leader>fg', '<cmd>Telescope live_grep<cr>',  keymap_opts)
 '''
+lua_source = '''
+require('telescope').setup{
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-x>"] = false,
+                ["<C-s>"] = require('telescope.actions').select_horizontal,
+            },
+            n = {
+                ["<C-x>"] = false,
+                ["<C-s>"] = require('telescope.actions').select_horizontal,
+            },
+        }
+    }
+}
+'''
