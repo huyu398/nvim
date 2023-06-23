@@ -122,16 +122,6 @@ repo = 'vim-denops/denops.vim'
 rev = 'v2.2.0'
 
 [[plugins]]
-repo = 'matsui54/denops-signature_help'
-rev = '8a8df4c'
-hook_add = '''
-    call signature_help#enable()
-
-    inoremap <expr><c-d> signature_help#scroll(+4)
-    inoremap <expr><c-u> signature_help#scroll(-4)
-'''
-
-[[plugins]]
 repo = 'matsui54/denops-popup-preview.vim'
 rev = 'c1b5c6e'
 hook_add = '''
