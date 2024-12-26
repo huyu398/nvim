@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'kdheepak/lazygit.nvim'
-rev = '3466e48' # 2023-06-04
+rev = '77a0d42' # 2024-12-12
 on_cmd = [
     'LazyGit',
     'LazyGitConfig',
