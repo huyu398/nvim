@@ -1,21 +1,21 @@
-[[plugins]]
-repo = 'w0ng/vim-hybrid'
+# [[plugins]]
+# repo = 'w0ng/vim-hybrid'
 # hook_add = '''
 #     set background=dark
 #     autocmd VimEnter * nested colorscheme hybrid
 # '''
 
-[[plugins]]
-repo = 'rakr/vim-one'
+# [[plugins]]
+# repo = 'rakr/vim-one'
 # hook_add = '''
 #     colorscheme one
 #     set background=light
 #     set termguicolors
 # '''
 
-[[plugins]]
-repo = 'shaunsingh/nord.nvim'
-rev = 'a6bb6a8'
+# [[plugins]]
+# repo = 'shaunsingh/nord.nvim'
+# rev = 'a6bb6a8'
 # hook_add = '''
 #     let g:nord_italic = v:false
 #     colorscheme nord
@@ -23,7 +23,7 @@ rev = 'a6bb6a8'
 
 [[plugins]]
 repo = 'EdenEast/nightfox.nvim'
-rev = '77aa745' # 2023-05-12
+rev = 'v3.10.0' # 2024-07-22
 lua_add = '''
 vim.cmd('colorscheme nordfox')
 '''
