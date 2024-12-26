@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 's1n7ax/nvim-window-picker'
-rev = 'v2.0.0' # 2023-06-21
+rev = 'v2.0.3' # 2023-12-17
 on_cmd = ['Neotree']
 lua_source = '''
 require('window-picker').setup({

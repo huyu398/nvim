@@ -1,10 +1,11 @@
 [[plugins]]
 repo = 'nvim-neo-tree/neo-tree.nvim'
-rev = '2.64' # 2023-06-08
+rev = '3.27' # 2024-09-22
 depends = [
     'plenary.nvim',
     'nui.nvim',
     'nvim-window-picker',
+    'nvim-web-devicons',
 ]
 on_cmd = ['Neotree']
 lua_add = '''
