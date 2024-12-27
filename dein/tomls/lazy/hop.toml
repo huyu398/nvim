@@ -1,6 +1,6 @@
 [[plugins]]
-repo = 'phaazon/hop.nvim'
-rev = 'v2.0.3' # 2022-10-31
+repo = 'smoka7/hop.nvim'
+rev = 'v2.7.2' # 2024-10-18
 on_cmd = [
     'HopVerticalBC', 'HopVerticalAC', 'HopPattern',
 ]
