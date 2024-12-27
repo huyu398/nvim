@@ -1,6 +1,9 @@
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
-rev = '05d78e9' # 2023-05-05
+rev = '2a5bae9' # 2024-11-08
+depends = [
+    'nvim-web-devicons',
+]
 lua_add = '''
 --- @param trunc_width number 画面幅がtrunc_widthより小さい場合、コンポーネントを短縮する
 --- @param trunc_len number trunc_widthより小さい場合、コンポーネントをtrunc_len文字に短縮する
