@@ -1,7 +1,11 @@
 [[plugins]]
 repo = 'github/copilot.vim'
+rev = 'v1.15.0' # 2024-01-19
 hook_add = '''
 inoremap <silent> <expr> <C-f> copilot#Accept()
 nnoremap <silent> <expr> <leader>p ":Copilot panel<CR>"
 let g:copilot_no_tab_map = v:true
+let g:copilot_filetypes = {
+    \ '*': v:true,
+    \ }
 '''
